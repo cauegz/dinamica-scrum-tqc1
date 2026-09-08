@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Section Principal */
+#mural {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2em 2%;
+}
+
+/* Estrutura do Cabeçalho */
+.mural-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 1.5em auto;
+}
+
+.mural-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.mural-titulos {
+    display: flex;
+    flex-direction: column;
+}
+
+.frases {
+    font-size: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+    color: #FAA926;
+    margin: 0;
+}
+
+.mural {
+    font-size: 2.3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1;
+}
+
+.contador-paginas {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    display: inline-block; /* Necessário para aplicar transformações como scale */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animação suave */
+    cursor: default;
+}
+
+/* Animação ao passar o mouse */
+.contador-paginas:hover {
+    color: #FAA926; /* Muda para o amarelo do seu tema */
+    transform: scale(1.15); /* Aumenta ligeiramente de tamanho */
+}
+
+/* Wrapper Lateral (Seta - Conteúdo - Seta) */
+.mural-carrossel-wrapper {
+    display: flex;
+    align-items: flex-start; /* Alinha os botões pelo topo, não pelo centro */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+/* Botões da Seta Lateral */
+.seta-btn.seta-lateral {
+    margin-top: 75px; /* Empurra a seta para a altura entre a 1ª e a 2ª linha de cards */
+    /* Mantenha o restante dos estilos da seta que você já tem abaixo */
+    background-color: transparent;
+    border: 2px solid #FAA926;
+    color: #FAA926;
+    font-size: 1.4rem;
+    font-weight: bold;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.seta-btn.seta-lateral:hover {
+    background-color: #FAA926;
+    color: #000000;
+}
+
+.seta-btn.seta-lateral:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    border-color: #888888;
+    color: #888888;
+}
+
+/* Grid Container para os Cards */
+.mural-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    flex-grow: 1;
+    align-content: start;
+}
+
+.mural-item {
+    color: #FFFFFF;
+    border-left: 3px solid #FAA926;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    
+    /* Adiciona transição suave para o efeito de zoom */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+}
+
+/* Animação de Zoom no Hover */
+.mural-item:hover {
+    transform: scale(1.05) translateX(5px); /* Dá zoom e desliza levemente para a direita */
+    border-left-color: #FFFFFF; /* Muda a borda amarela para branco */
+}
+
+.mural-item .aspas {
+    color: #FAA926;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.mural-item p {
+    display: inline;
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mural-item .autor {
+    display: block;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    margin-top: 8px;
+    opacity: 0.85;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .mural-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 50px;
+    }
+}
