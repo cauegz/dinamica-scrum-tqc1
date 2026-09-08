@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página da turma TQC1</title>
+    <link rel="stylesheet" href="css/abertura_pagina.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/rodape.css" />
     <link rel="stylesheet" href="css/cabecalho.css">
+    <script src="abertura_pagina.js" defer></script>
 </head>
 <body>
-        <header class="site-header">
-            <a class="brand" href="#inicio" aria-label="Início">
-                <img src="images/logofs.png" alt="Logo TQC1">
-                <span>TQC1</span>
-            </a>
-            <nav aria-label="Navegação principal">
-                <a href="#inicio">Início</a>
-                <a href="#quem-somos">Quem somos</a>
-                <a href="#integrantes">Integrantes</a>
-                <a href="#mural">Mural</a>
-                <a href="#trajetoria">Trajetória</a>
-            </nav>
-        </header>
-        <footer class="site-footer">
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Início">
+            <img src="images/logofs.png" alt="Logo TQC1">
+            <span>TQC1</span>
+        </a>
+        <nav aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#quem-somos">Quem somos</a>
+            <a href="#integrantes">Integrantes</a>
+            <a href="#mural">Mural</a>
+            <a href="#trajetoria">Trajetória</a>
+        </nav>
+    </header>
+    <section class="abertura-pagina" aria-label="Seção de abertura da página da turma TQC1">
+        <div class="abertura-pagina__content">
+            <div class="abertura-pagina__text">
+                <p class="abertura-pagina__eyebrow">Residência FullStack</p>
+                <h1 class="abertura-pagina__title">TQC1<br>Manhã</h1>
+
+                <div class="abertura-pagina__tagline">
+                    <p class="abertura-pagina__tagline-text">
+                        Códigos que conectam, ideias que transformam.
+                    </p>
+                </div>
+
+                <a href="#integrantes" class="abertura-pagina__button">Conhecer integrantes</a>
+            </div>
+
+            <div class="abertura-pagina__visual" aria-label="Foto da turma">
+                <div class="abertura-pagina__photo-wrap">
+                    <img
+                        class="abertura-pagina__photo"
+                        src="images/foto-turma.jpeg"
+                        alt="Foto da turma de estudantes"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <span class="footer-logo-icon">&lt;/&gt;</span>
@@ -33,7 +61,7 @@
             <div class="footer-info">
                 <p>&lt;residência&gt; Full Stack 5.0</p>
             </div>
-            </div>
-        </footer>
+        </div>
+     </footer>
 </body>
 </html>
