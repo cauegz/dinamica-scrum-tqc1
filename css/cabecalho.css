@@ -1,71 +1,121 @@
 :root {
-	--cor-texto: #fff;
-	--cor-destaque: #FAA926;
+    --cor-texto: #fff;
+    --cor-destaque: #FAA926;
+    --cor-cabecalho: #012e73;
 }
 
 .site-header,
 .site-header * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .site-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	z-index: 1000;
-	width: 100%;
-	padding: 1rem 2rem;
-	font-family: "Fira Code", monospace;
-	font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 1rem 2rem;
+
+    font-family: "Fira Code", monospace;
+    font-size: 1.2rem;
+
+    background-color: var(--cor-cabecalho);
 }
 
 .brand {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.75rem;
-	color: var(--cor-texto);
-	font-family: "Fira Code", monospace;
-	text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    gap: 0.75rem;
+
+    color: var(--cor-texto);
+
+    font-family: "Fira Code", monospace;
+
+    text-decoration: none;
 }
 
 .brand img {
-	display: block;
-	width: 3.5rem;
-	height: 3.5rem;
-	object-fit: contain;
+    display: block;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    object-fit: contain;
 }
 
 .site-header nav {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
 }
 
 .site-header nav a {
-	color: var(--cor-texto);
-	font-family: "Fira Code", monospace;
-	text-decoration: none;
+    color: var(--cor-texto);
+
+    font-family: "Fira Code", monospace;
+
+    text-decoration: none;
 }
 
 .site-header nav a:hover,
 .site-header nav a:focus-visible {
-	text-decoration: underline;
-	color: var(--cor-destaque);
+    text-decoration: none;
+    color: var(--cor-destaque);
 }
 
-@media (max-width: 700px) {
-	.site-header {
-		flex-direction: column;
-		gap: 1rem;
-	}
 
-	.site-header nav {
-		flex-wrap: wrap;
-		gap: 0.75rem 1.25rem;
-	}
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .site-header {
+        position: relative !important;
+
+        top: auto;
+        right: auto;
+        left: auto;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        gap: 1rem;
+
+        padding: 1rem;
+
+        background-color: var(--cor-cabecalho);
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    .site-header nav {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 0.75rem 1.25rem;
+    }
+
+    .site-header nav a {
+        font-size: 1rem;
+    }
 }
