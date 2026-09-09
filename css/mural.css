@@ -10,8 +10,10 @@
 /* Estrutura do Cabeçalho */
 .mural-header {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; 
     margin: 0 auto 1.5em auto;
+    padding: 0 46px;   
+    box-sizing: border-box;
 }
 
 .mural-header-content {
@@ -27,14 +29,14 @@
 }
 
 .frases {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
     color: #FAA926;
     margin: 0;
 }
 
 .mural {
-    font-size: 2.3rem;
+    font-size: 2.9rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #FFFFFF;
@@ -47,32 +49,31 @@
     font-size: 1.1rem;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
-    display: inline-block; /* Necessário para aplicar transformações como scale */
-    transition: transform 0.3s ease, color 0.3s ease; /* Animação suave */
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
     cursor: default;
 }
 
-/* Animação ao passar o mouse */
+/* Animação ao passar o mouse no contador */
 .contador-paginas:hover {
-    color: #FAA926; /* Muda para o amarelo do seu tema */
-    transform: scale(1.15); /* Aumenta ligeiramente de tamanho */
+    color: #FAA926;
+    transform: scale(1.15);
 }
 
-/* Wrapper Lateral (Seta - Conteúdo - Seta) */
+/* Wrapper Lateral (Seta - Conteúdo Centralizado - Seta) */
 .mural-carrossel-wrapper {
     display: flex;
-    align-items: flex-start; /* Alinha os botões pelo topo, não pelo centro */
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: space-between; /* Encosta as setas nas pontas do alinhamento */
     width: 100%;
-    max-width: 1300px;
+    max-width: 1000px; /* Largura total da área do carrossel */
     margin: 0 auto;
-    gap: 15px;
+    position: relative;
 }
 
 /* Botões da Seta Lateral */
 .seta-btn.seta-lateral {
-    margin-top: 75px; /* Empurra a seta para a altura entre a 1ª e a 2ª linha de cards */
-    /* Mantenha o restante dos estilos da seta que você já tem abaixo */
+    margin-top: 75px; /* Trava as setas na altura entre a 1ª e a 2ª linha */
     background-color: transparent;
     border: 2px solid #FAA926;
     color: #FAA926;
@@ -101,13 +102,16 @@
     color: #888888;
 }
 
-/* Grid Container para os Cards */
+/* Grid Container para os Cards - Ajustado para Centralizar */
 .mural-container {
     display: grid;
-    grid-template-columns: 1fr; 
-    gap: 20px; 
-    flex-grow: 1;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px; /* Alinha o bloco central */
+    margin: 0 auto;
     align-content: start;
+    min-height: 280px; /* Mantém a altura fixa mesmo na última página com 3 cards */
 }
 
 .mural-item {
@@ -119,15 +123,19 @@
     box-sizing: border-box;
     cursor: pointer;
     
-    /* Adiciona transição suave para o efeito de zoom */
-    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Centraliza o conteúdo internamente dentro do card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
     
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
 }
 
 /* Animação de Zoom no Hover */
 .mural-item:hover {
-    transform: scale(1.05) translateX(5px); /* Dá zoom e desliza levemente para a direita */
-    border-left-color: #FFFFFF; /* Muda a borda amarela para branco */
+    transform: scale(1.05) translateX(5px);
+    border-left-color: #FFFFFF;
 }
 
 .mural-item .aspas {
@@ -150,15 +158,15 @@
     text-align: left;
     color: #FFFFFF;
     font-size: 0.95rem;
-    margin-top: 8px;
+    margin-top: 6px;
     opacity: 0.85;
     font-family: 'Roboto', sans-serif;
 }
 
-/* Responsividade */
+/* Responsividade Desktop */
 @media (min-width: 768px) {
     .mural-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px 50px;
+        gap: 30px 60px;
     }
 }
