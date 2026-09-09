@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+
+:root {
+  --cor-fundo: #012E73;
+  --cor-amarelo: #FAA926;
+  --cor-detalhe: #1089E3;
+  --cor-texto: #f7f8fa;
+  --fonte-titulo: 'Lovelo', sans-serif;
+  --fonte-corpo: 'Fira Code', monospace;
+}
+
+.quem-somos-section {
+  background-color: var(--cor-fundo);
+  padding: 100px 10%;
+}
+
+.quem-somos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* mesmo padrão do label do Hero */
+.categoria {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-amarelo);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.titulo-principal {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-texto);
+  font-size: 3rem;
+  line-height: 1.05;
+  margin: 0 0 50px 0;
+  text-transform: uppercase;
+}
+
+.quem-somos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* imitando o card "Códigos que cone" do hero */
+.destaque-box {
+  background-color: rgba(16, 137, 227, 0.12);
+  border-left: 4px solid var(--cor-amarelo);
+  border-radius: 4px;
+  padding: 28px 28px;
+}
+
+.destaque-box p {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.texto-complementar p {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.tag-valor {
+  color: var(--cor-amarelo);
+  font-weight: 600;
+}
