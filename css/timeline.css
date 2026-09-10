@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap");
+
+#linha-tempo {
+  background-color: #012e73;
+  color: #ffffff;
+  padding: 5rem 8% 6rem 8%;
+  font-family: "Fira Code", monospace;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADER */
+.linha-tempo-header {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.subtitulo {
+  color: #faa926;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.linha-tempo-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.header-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* WRAPPER E TRILHO */
+.linha-tempo-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* LINHA TRACEJADA/SÓLIDA (Desktop) */
+.timeline-track {
+  position: absolute;
+  top: 2.5rem;
+  left: 3rem;
+  right: 3rem;
+  height: 3px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(250, 169, 38, 0.3) 0,
+    rgba(250, 169, 38, 0.3) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 1;
+}
+
+.timeline-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #faa926;
+  box-shadow: 0 0 12px #faa926;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* CONTAINER EM GRID/FLEX DA LINHA */
+.linha-tempo-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ITEM INDIVIDUAL */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ÍCONES E NÓS DE CONEXÃO */
+.node-wrapper {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.icone-wrapper {
+  background-color: #012e73;
+  border: 3px solid #faa926;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.icone-wrapper svg {
+  width: 2.25rem;
+  height: 2.25rem;
+  fill: #faa926;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover .icone-wrapper {
+  background-color: #faa926;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(250, 169, 38, 0.6);
+}
+
+.timeline-item:hover .icone-wrapper svg {
+  fill: #012e73;
+  transform: scale(1.05);
+}
+
+.node-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #faa926;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.timeline-item.active .node-pulse {
+  animation: pulseAnimation 2s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+/* CABEÇALHO DO CARD DE MARCO */
+.item-header h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.data-badge {
+  font-size: 0.65rem;
+  color: #faa926;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
+}
+
+/* CARDS DE CONTEÚDO MODERNIZADOS */
+.timeline-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 0.75rem;
+  padding: 1.2rem;
+  text-align: left;
+  width: 100%;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:hover .timeline-card {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.timeline-card p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-card p {
+  color: #012e73;
+}
+
+/* TAGS DE TECNOLOGIA */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: rgba(250, 169, 38, 0.15);
+  color: #faa926;
+  border: 1px solid rgba(250, 169, 38, 0.3);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .tag {
+  background-color: #012e73;
+  color: #ffffff;
+  border-color: #012e73;
+}
+
+/* ========================================================
+   📱 LAYOUT RESPONSIVO (MOBILE: < 768px)
+   Transforma a linha do tempo horizontal num feed vertical!
+   ======================================================== */
+@media (max-width: 992px) {
+  .linha-tempo-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .timeline-track { display: none; }
+}
+
+@media (max-width: 768px) {
+  #linha-tempo {
+    padding: 4rem 1.25rem;
+  }
+
+  .linha-tempo-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .linha-tempo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+    position: relative;
+  }
+
+  /* Linha vertical à esquerda no celular */
+  .linha-tempo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.25rem;
+    width: 3px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #faa926 0,
+      #faa926 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    z-index: 1;
+  }
+
+  .timeline-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+    gap: 1.25rem;
+  }
+
+  .node-wrapper {
+    position: absolute;
+    left: -2rem;
+    top: 0;
+    margin-bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .icone-wrapper {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-width: 2px;
+  }
+
+  .icone-wrapper svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .item-header {
+    display: none; /* Movemos a informação para dentro do card no mobile */
+  }
+
+  .timeline-card {
+    min-height: auto;
+    margin-left: 1rem;
+  }
+
+  /* Injeta os títulos dentro do card no mobile via CSS pseudo se necessário ou adaptado */
+  .timeline-card::before {
+    content: attr(data-title);
+    font-weight: 700;
+    color: #faa926;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
