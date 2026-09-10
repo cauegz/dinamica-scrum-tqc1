@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Section Principal */
+#mural {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2em 2%;
+}
+
+/* Estrutura do Cabeçalho */
+.mural-header {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto 1.5em auto;
+    padding: 0 clamp(16px, 6vw, 46px); /* encolhe nas laterais conforme a tela diminui */
+    box-sizing: border-box;
+}
+
+.mural-header-content {
+    display: flex;
+    flex-wrap: wrap;          /* permite empilhar título e contador em vez de sobrepor/vazar */
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+}
+
+.mural-titulos {
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* permite que o bloco de título encolha em vez de forçar overflow */
+}
+
+.frases {
+    font-size: clamp(1.1rem, 4vw, 1.8rem); /* acompanha a largura da tela */
+    font-family: 'Roboto', sans-serif;
+    color: #FAA926;
+    margin: 0;
+}
+
+.mural {
+    font-size: clamp(1.8rem, 8vw, 2.9rem); /* nunca fica maior que a tela permite */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    line-height: 1;
+}
+
+.contador-paginas {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    white-space: nowrap; /* "1 / 3" nunca quebra no meio */
+    flex-shrink: 0;       /* não deixa o contador ser espremido pelo título */
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: default;
+}
+
+/* Animação ao passar o mouse no contador */
+.contador-paginas:hover {
+    color: #FAA926;
+    transform: scale(1.15);
+}
+
+/* Wrapper Lateral (Seta - Conteúdo Centralizado - Seta) */
+.mural-carrossel-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* Encosta as setas nas pontas do alinhamento */
+    width: 100%;
+    max-width: 1000px; /* Largura total da área do carrossel */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Botões da Seta Lateral */
+.seta-btn.seta-lateral {
+    margin-top: 75px; /* Trava as setas na altura entre a 1ª e a 2ª linha */
+    background-color: transparent;
+    border: 2px solid #FAA926;
+    color: #FAA926;
+    font-size: 1.4rem;
+    font-weight: bold;
+    min-width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.seta-btn.seta-lateral:hover {
+    background-color: #FAA926;
+    color: #000000;
+}
+
+.seta-btn.seta-lateral:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    border-color: #888888;
+    color: #888888;
+}
+
+/* Grid Container para os Cards - Ajustado para Centralizar */
+.mural-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 750px; /* Alinha o bloco central */
+    margin: 0 auto;
+    align-content: start;
+    min-height: 280px; /* Mantém a altura fixa mesmo na última página com 3 cards */
+}
+
+.mural-item {
+    color: #FFFFFF;
+    border-left: 3px solid #FAA926;
+    padding-left: 15px;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    
+    /* Centraliza o conteúdo internamente dentro do card */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70px;
+    
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+}
+
+/* Animação de Zoom no Hover */
+.mural-item:hover {
+    transform: scale(1.05) translateX(5px);
+    border-left-color: #FFFFFF;
+}
+
+.mural-item .aspas {
+    color: #FAA926;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.mural-item p {
+    display: inline;
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mural-item .autor {
+    display: block;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    margin-top: 6px;
+    opacity: 0.85;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Responsividade Desktop */
+@media (min-width: 768px) {
+    .mural-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 60px;
+    }
+}
+
+/* ===================================================
+   Responsividade Mobile (telas menores que 768px)
+   =================================================== */
+@media (max-width: 767px) {
+    #mural {
+        padding: 2em 4%;
+    }
+
+    /* Com o grid em coluna única, o offset fixo de 75px (pensado para
+       alinhar entre a 1ª e 2ª linha do grid de 2 colunas do desktop)
+       não faz mais sentido e desalinha as setas em relação aos cards. */
+    .mural-carrossel-wrapper {
+        align-items: center; /* centraliza as setas em relação ao bloco de cards */
+        gap: 8px;
+    }
+
+    .seta-btn.seta-lateral {
+        margin-top: 0; /* remove o offset fixo do desktop */
+        min-width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .mural-container {
+        max-width: 100%;
+        min-height: auto; /* altura fixa do desktop não é necessária em coluna única */
+        gap: 16px;
+    }
+
+    .mural-item {
+        min-height: auto;
+    }
+
+    .mural-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Telas muito estreitas (celulares pequenos) */
+@media (max-width: 380px) {
+    .mural-header {
+        padding: 0 12px;
+    }
+
+    .mural-carrossel-wrapper {
+        gap: 4px;
+    }
+
+    .seta-btn.seta-lateral {
+        min-width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+}

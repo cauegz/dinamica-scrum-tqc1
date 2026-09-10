@@ -1,65 +1,167 @@
 <!doctype html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Página da turma TQC1</title>
-        <link rel="stylesheet" href="css/abertura_pagina.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="css/rodape.css" />
-        <link rel="stylesheet" href="css/cabecalho.css" />
-        <script src="abertura_pagina.js" defer></script>
-    </head>
-    <body>
-        <header class="site-header">
-            <a class="brand" href="#inicio" aria-label="Início">
-                <img src="images/logofs.png" alt="Logo TQC1" />
-                <span>TQC1</span>
-            </a>
-            <nav aria-label="Navegação principal">
-                <a href="#inicio">Início</a>
-                <a href="#quem-somos">Quem somos</a>
-                <a href="#integrantes">Integrantes</a>
-                <a href="#mural">Mural</a>
-                <a href="#trajetoria">Trajetória</a>
-            </nav>
-        </header>
-        <section
-            class="abertura-pagina"
-            aria-label="Seção de abertura da página da turma TQC1"
-        >
-            <div class="abertura-pagina__content">
-                <div class="abertura-pagina__text">
-                    <p class="abertura-pagina__eyebrow">Residência FullStack</p>
-                    <h1 class="abertura-pagina__title">TQC1<br />Manhã</h1>
 
-                    <div class="abertura-pagina__tagline">
-                        <p class="abertura-pagina__tagline-text">
-                            Códigos que conectam, ideias que transformam.
-                        </p>
-                    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página da turma TQC1</title>
+    <link rel="stylesheet" href="css/abertura_pagina.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/rodape.css" />
+    <link rel="stylesheet" href="css/cabecalho.css" />
+    <link rel="stylesheet" href="css/mural.css">
+    <script src="abertura_pagina.js" defer></script>
+    <script src="mural.js" defer></script>
+</head>
 
-                    <a href="#integrantes" class="abertura-pagina__button"
-                        >Conhecer integrantes</a
-                    >
+<body>
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Início">
+            <img src="images/logofs.png" alt="Logo TQC1" />
+            <span>TQC1</span>
+        </a>
+        <nav aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#quem-somos">Quem somos</a>
+            <a href="#integrantes">Integrantes</a>
+            <a href="#mural">Mural</a>
+            <a href="#trajetoria">Trajetória</a>
+        </nav>
+    </header>
+    <section class="abertura-pagina" aria-label="Seção de abertura da página da turma TQC1">
+        <div class="abertura-pagina__content">
+            <div class="abertura-pagina__text">
+                <p class="abertura-pagina__eyebrow">Residência FullStack</p>
+                <h1 class="abertura-pagina__title">TQC1<br />Manhã</h1>
+
+                <div class="abertura-pagina__tagline">
+                    <p class="abertura-pagina__tagline-text">
+                        Códigos que conectam, ideias que transformam.
+                    </p>
                 </div>
 
-                <div class="abertura-pagina__visual" aria-label="Foto da turma">
-                    <div class="abertura-pagina__photo-wrap">
-                        <img
-                            class="abertura-pagina__photo"
-                            src="images/foto-turma.jpeg"
-                            alt="Foto da turma de estudantes"
-                        />
-                    </div>
+                <a href="#integrantes" class="abertura-pagina__button">Conhecer integrantes</a>
+            </div>
+
+            <div class="abertura-pagina__visual" aria-label="Foto da turma">
+                <div class="abertura-pagina__photo-wrap">
+                    <img class="abertura-pagina__photo" src="images/foto-turma.jpeg"
+                        alt="Foto da turma de estudantes" />
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <section id="mural">
+        <!-- Cabeçalho (Título e Contador de Páginas) -->
+        <div class="mural-header">
+            <div class="mural-header-content">
+                <div class="mural-titulos">
+                    <p class="frases">FRASES</p>
+                    <h2 class="mural">MURAL</h2>
+                </div>
+
+                <!-- Contador de Páginas no Topo -->
+                <span id="contador" class="contador-paginas">1 / 3</span>
+            </div>
+        </div>
+
+        <!-- Carrossel Wrapper (Setas nas laterais) -->
+        <div class="mural-carrossel-wrapper">
+            <button id="anterior" class="seta-btn seta-lateral" aria-label="Página Anterior">&lt;</button>
+
+            <!-- Grid Container para os Cards -->
+            <div class="mural-container">
+                <!-- PÁGINA 1 -->
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Não acho que quem ganhar ou quem perder, nem quem ganhar nem perder, vai ganhar ou perder. Vai
+                        todo mundo perder.</p><span class="autor">Pietro Kober</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Graduanda em Sistemas para Internet, 20 anos. Entusiasta do desenvolvimento Frontend, buscando
+                        criar experiências reais.</p><span class="autor">Larissa Kovalsikoski </span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>A Residência Full Stack 5.0 representa meu primeiro contato mais aprofundado com a programação,
+                        através de atividades práticas que me desafiam, ampliam meus conhecimentos e contribuem para
+                        minha evolução na área de tecnologia.</p><span class="autor">Mariana de Moura Longhi</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>A parte mais difícil é de fato começar.</p><span class="autor">Oliver Lacerda</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Seu único limite é sua mente. Supere-a e quebre esse limite dia após dia.</p><span
+                        class="autor">Miguel Haffele Esperança</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Conhecimento é poder.</p><span class="autor">Giulia Bianchi da Silva</span>
+                </div>
+
+                <!-- PÁGINA 2 (Cards 7 ao 12) -->
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Aprendendo os primeiros passos na enorme jornada do mundo da tecnologia. Sigo em frente, rumo à
+                        criação de soluções!</p><span class="autor">Letícia Fischer</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>"Feliz aquele que transfere o que sabe e aprende o que ensina." — Cora Coralina</p><span
+                        class="autor">Álvaro Jaques Biguelini</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Diversidade.</p><span class="autor">Nicolas dos Reis Lopes dos Santos</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Toda aula, um novo aprendizado e uma chance de compartilhar conhecimentos com os demais.</p><span
+                        class="autor">Carlos Clips</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>O começo é complicado, mas o aprendizado no final é muito gratificante.</p><span
+                        class="autor">Manoel Pinto Paiva</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Aprender a programar em equipe mostrou que o verdadeiro código limpo é aquele que todos conseguem
+                        evoluir juntos.</p><span class="autor">Érica Gregório</span>
+                </div>
+
+                <!-- PÁGINA 3 (Cards 13 ao 18) -->
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Está sendo uma experiência incrível participar desta equipe!! estou aprendendo muitas coisas
+                        novas com a prática.</p><span class="autor">Nicolly Viana Martins</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Me desenvolvi muito profissionalmente ao participar da Residência Fullstack 5.0</p><span
+                        class="autor">Cauê Geraldi Zanardi </span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Jamais desista de aprender algo que você se propôs, pois se você perder para si mesmo, você irá
+                        ganhar de quem? Foco, fé e resiliência.</p><span class="autor">Rodrigo da Silva Ortiz </span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Nunca seja tão educado, a ponto de esquecer o seu poder
+                        Nunca exerça tanto poder, a ponto de esquecer de ser educado</p><span class="autor">Sebastian
+                        Santa Maria</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Às vezes o silêncio guia nossa mente e te move para um lugar tão distante. - The Neighbourhood</p>
+                    <span class="autor">Joana D'Arc Viana Dias</span>
+                </div>
+                <div class="mural-item"><span class="aspas">"</span>
+                    <p>Casos especiais não são especiais o suficiente para quebrar as regras. - Tim Peters</p>
+                    <span class="autor">André Pazini Hoch</span>
+                </div>
+            </div>
+
+            <button id="proximo" class="seta-btn seta-lateral" aria-label="Próxima Página">&gt;</button>
+        </div>
+    </section>
+
+
+
+
+    <section id="linha-tempo">
+
+
         <footer class="site-footer">
             <div class="footer-container">
                 <div class="footer-brand">
@@ -71,5 +173,6 @@
                 </div>
             </div>
         </footer>
-    </body>
+</body>
+
 </html>
