@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página da turma TQC1</title>
     <link rel="stylesheet" href="css/abertura_pagina.css" />
-   <link rel="stylesheet" href="./css/ProfileCard.css" />
+    <link rel="stylesheet" href="./css/ProfileCard.css" />
+    <link rel="stylesheet" href="css/team_section.css" /> <!-- Novo arquivo CSS criado para os Integrantes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="css/mural.css">
     <script src="abertura_pagina.js" defer></script>
     <script src="mural.js" defer></script>
+    <script src="team_section.js" defer></script> <!-- Novo arquivo JS criado para a setinha -->
 </head>
 
 <body>
@@ -32,7 +34,8 @@
             <a href="#trajetoria">Trajetória</a>
         </nav>
     </header>
-    <section class="abertura-pagina" aria-label="Seção de abertura da página da turma TQC1">
+
+    <section class="abertura-pagina" aria-label="Seção de abertura da página da turma TQC1" id="inicio">
         <div class="abertura-pagina__content">
             <div class="abertura-pagina__text">
                 <p class="abertura-pagina__eyebrow">Residência FullStack</p>
@@ -55,18 +58,191 @@
             </div>
         </div>
     </section>
-    
-    
-        <div class="profile-card">
-      <div class="profile-avatar">
-        <img src="./images/Alvaro Biguelini.png" alt="Foto de Nome 1" />
-      </div>
-      <div class="profile-info">
-        <h3 class="profile-name">Álvaro Biguelini</h3>
-        <p class="profile-description">java / Desenvolvedor Full Stack</p>
-      </div>
-    </div>
-    
+
+    <!-- SEÇÃO INTEGRANTES COM SCROLL INTERNO E SETA -->
+    <section class="team-section" id="integrantes">
+        <div class="team-header">
+            <span class="subtitle">INTEGRANTES</span>
+            <h2>CONHEÇA NOSSO TIME</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="team-content-wrapper">
+            <!-- Linha lateral e botão de seta para descer os cards -->
+            <div class="scroll-indicator">
+                <div class="vertical-line"></div>
+                <button class="arrow-down-btn" id="scrollTeamBtn" title="Ver mais integrantes">
+                    <div class="arrow-down"></div>
+                </button>
+            </div>
+
+            <!-- Container com rolagem interna -->
+            <div class="cards-scroll-container" id="cardsScrollContainer">
+                <!-- Card 1 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Alvaro Biguelini.png" alt="Álvaro Biguelini" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Álvaro Biguelini</h3>
+                        <p class="profile-description">Estudante de CC, residente Fullstack e aprendendo Java</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Andre Hoch.jpeg" alt="Andre Hoch" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">André Hoch</h3>
+                        <p class="profile-description">Em transição de carreira, explorando novas tecnologias e
+                            descobrindo, a cada projeto, onde a programação pode me levar.</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Érica Gregório.jpg" alt="Erica" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Érica Gregório</h3>
+                        <p class="profile-description">Estudante de programação, sempre buscando aprender e evoluir na
+                            área de tecnologia.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/GIULIA BIANCHI DA SILVA.png" alt="Giulia" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Giulia Bianchi da Silva</h3>
+                        <p class="profile-description">Estudante de Ciência da Computação na UniLasalle e desenvolvedora
+                            Jr.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Joana Dias.png" alt="Joana" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Joana D'arc Viana Dias</h3>
+                        <p class="profile-description">Às vezes o silêncio guia nossa mente e te move para um lugar tão
+                            distante - The Neighbourhood</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Larissa Dias.jpeg" alt="Larissa Dias" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Larissa Dias</h3>
+                        <p class="profile-description">Em busca de soluções.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Letícia Pons.jpg" alt="Leticia" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Letícia Fischer</h3>
+                        <p class="profile-description">Sou uma profissional em transição de carreira enfrentando
+                            desafios para construir uma base em TI.
+                            Minha experiência profissional foi exclusivamente na área administrativa. Acredito que irei
+                            optar pela especialização
+                            em banco de dados.</p>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/MANOEL PINTO PAIVA.webp" alt="Manoel" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Manoel Pinto Paiva</h3>
+                        <p class="profile-description">19 anos, atualmente estudando Engenharia de Software na
+                            Universidade LaSalle, foco em desenvolvimento Full-Stack.</p>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Pietro Kober Costa.jpg" alt="Pietro" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Pietro Kober</h3>
+                        <p class="profile-description">Estudante aprendendo programação</p>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/rodrigo' da silva.png" alt="Rodrigo" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Rodrigo da Silva</h3>
+                        <p class="profile-description">Estudando Full Stack pelo instituto eldorado, tenho 44 anos e um
+                            filho de 11 anos, atualmente trabalho com organização
+                            e liderança de equipe em eventos de grande e pequeno porte, tenho facilidade de trabalhar em
+                            equipe e sou de fácil aprendizado.</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/sebastian rodrigues.jpeg" alt="Sebastian" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">sebastian rodrigues santa maria</h3>
+                        <p class="profile-description"> Estudante de ADS | Foco em Banco de Dados.</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="" alt="Miguel" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Miguel Haffele Esperança</h3>
+                        <p class="profile-description">Desenvolvedor Jr. Full-stack (Js, C, Java, Python, SQL) e
+                            estudante técnico em eletrônica.</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="" alt="Nicolas" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Nicolas dos Reis Lopes dos Santos</h3>
+                        <p class="profile-description">Técnico em TI pelo IFRS restinga, atuava em vendas com foco para
+                            carreira de infraestrutura.</p>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="./images/Mariana Longhi.jpeg" alt="Mariana Longhi" />
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Mariana Longhi</h3>
+                        <p class="profile-description">Estudante de Engenharia de Software e apaixonada por tecnologia.
+                            Estou sempre buscando aprender e desenvolver novas habilidades na área.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="mural">
         <!-- Cabeçalho (Título e Contador de Páginas) -->
@@ -84,7 +260,8 @@
 
         <!-- Carrossel Wrapper (Setas nas laterais) -->
         <div class="mural-carrossel-wrapper">
-            <button id="anterior" class="seta-btn seta-lateral" aria-label="Página Anterior"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <button id="anterior" class="seta-btn seta-lateral" aria-label="Página Anterior"><i
+                    class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
 
             <!-- Grid Container para os Cards -->
             <div class="mural-container">
@@ -113,7 +290,7 @@
                     <p>Conhecimento é poder.</p><span class="autor">Giulia Bianchi da Silva</span>
                 </div>
 
-                <!-- PÁGINA 2 (Cards 7 ao 12) -->
+                <!-- PÁGINA 2 -->
                 <div class="mural-item"><span class="aspas">"</span>
                     <p>Aprendendo os primeiros passos na enorme jornada do mundo da tecnologia. Sigo em frente, rumo à
                         criação de soluções!</p><span class="autor">Letícia Fischer</span>
@@ -138,7 +315,7 @@
                         evoluir juntos.</p><span class="autor">Érica Gregório</span>
                 </div>
 
-                <!-- PÁGINA 3 (Cards 13 ao 18) -->
+                <!-- PÁGINA 3 -->
                 <div class="mural-item"><span class="aspas">"</span>
                     <p>Está sendo uma experiência incrível participar desta equipe!! estou aprendendo muitas coisas
                         novas com a prática.</p><span class="autor">Nicolly Viana Martins</span>
@@ -157,7 +334,8 @@
                         Santa Maria</span>
                 </div>
                 <div class="mural-item"><span class="aspas">"</span>
-                    <p>Às vezes o silêncio guia nossa mente e te move para um lugar tão distante. - The Neighbourhood</p>
+                    <p>Às vezes o silêncio guia nossa mente e te move para um lugar tão distante. - The Neighbourhood
+                    </p>
                     <span class="autor">Joana D'Arc Viana Dias</span>
                 </div>
                 <div class="mural-item"><span class="aspas">"</span>
@@ -166,27 +344,24 @@
                 </div>
             </div>
 
-            <button id="proximo" class="seta-btn seta-lateral" aria-label="Próxima Página"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+            <button id="proximo" class="seta-btn seta-lateral" aria-label="Próxima Página"><i
+                    class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
         </div>
     </section>
 
+    <section id="linha-tempo"></section>
 
-
-
-    <section id="linha-tempo">
-
-
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-brand">
-                    <span class="footer-logo-icon">&lt;/&gt;</span>
-                    <span class="footer-logo-text">TQC1</span>
-                </div>
-                <div class="footer-info">
-                    <p>&lt;residência&gt; Full Stack 5.0</p>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo-icon">&lt;/&gt;</span>
+                <span class="footer-logo-text">TQC1</span>
             </div>
-        </footer>
+            <div class="footer-info">
+                <p>&lt;residência&gt; Full Stack 5.0</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
