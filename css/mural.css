@@ -12,31 +12,34 @@
     width: 100%;
     max-width: 1200px; 
     margin: 0 auto 1.5em auto;
-    padding: 0 46px;   
+    padding: 0 clamp(16px, 6vw, 46px); /* encolhe nas laterais conforme a tela diminui */
     box-sizing: border-box;
 }
 
 .mural-header-content {
     display: flex;
+    flex-wrap: wrap;          /* permite empilhar título e contador em vez de sobrepor/vazar */
     justify-content: space-between;
     align-items: flex-end;
+    gap: 8px;
     width: 100%;
 }
 
 .mural-titulos {
     display: flex;
     flex-direction: column;
+    min-width: 0; /* permite que o bloco de título encolha em vez de forçar overflow */
 }
 
 .frases {
-    font-size: 1.8rem;
+    font-size: clamp(1.1rem, 4vw, 1.8rem); /* acompanha a largura da tela */
     font-family: 'Roboto', sans-serif;
     color: #FAA926;
     margin: 0;
 }
 
 .mural {
-    font-size: 2.9rem;
+    font-size: clamp(1.8rem, 8vw, 2.9rem); /* nunca fica maior que a tela permite */
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #FFFFFF;
@@ -50,6 +53,8 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     display: inline-block;
+    white-space: nowrap; /* "1 / 3" nunca quebra no meio */
+    flex-shrink: 0;       /* não deixa o contador ser espremido pelo título */
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: default;
 }
@@ -168,5 +173,60 @@
     .mural-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px 60px;
+    }
+}
+
+/* ===================================================
+   Responsividade Mobile (telas menores que 768px)
+   =================================================== */
+@media (max-width: 767px) {
+    #mural {
+        padding: 2em 4%;
+    }
+
+    /* Com o grid em coluna única, o offset fixo de 75px (pensado para
+       alinhar entre a 1ª e 2ª linha do grid de 2 colunas do desktop)
+       não faz mais sentido e desalinha as setas em relação aos cards. */
+    .mural-carrossel-wrapper {
+        align-items: center; /* centraliza as setas em relação ao bloco de cards */
+        gap: 8px;
+    }
+
+    .seta-btn.seta-lateral {
+        margin-top: 0; /* remove o offset fixo do desktop */
+        min-width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .mural-container {
+        max-width: 100%;
+        min-height: auto; /* altura fixa do desktop não é necessária em coluna única */
+        gap: 16px;
+    }
+
+    .mural-item {
+        min-height: auto;
+    }
+
+    .mural-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Telas muito estreitas (celulares pequenos) */
+@media (max-width: 380px) {
+    .mural-header {
+        padding: 0 12px;
+    }
+
+    .mural-carrossel-wrapper {
+        gap: 4px;
+    }
+
+    .seta-btn.seta-lateral {
+        min-width: 32px;
+        height: 32px;
+        font-size: 1rem;
     }
 }
