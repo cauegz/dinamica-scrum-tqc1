@@ -28,18 +28,19 @@
 .mural-titulos {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
     min-width: 0; /* permite que o bloco de título encolha em vez de forçar overflow */
 }
 
 .frases {
-    font-size: clamp(1.1rem, 4vw, 1.8rem); /* acompanha a largura da tela */
+    font-size: clamp(1.7rem, 5vw, 3rem); /* acompanha a largura da tela */
     font-family: 'Roboto', sans-serif;
     color: #FAA926;
     margin: 0;
 }
 
 .mural {
-    font-size: clamp(1.8rem, 8vw, 2.9rem); /* nunca fica maior que a tela permite */
+    font-size: clamp(2.2rem, 10vw, 4.2rem); /* nunca fica maior que a tela permite */
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #FFFFFF;
@@ -71,14 +72,14 @@
     align-items: flex-start;
     justify-content: space-between; /* Encosta as setas nas pontas do alinhamento */
     width: 100%;
-    max-width: 1000px; /* Largura total da área do carrossel */
+    max-width: 1600px; /* Largura total da área do carrossel */
     margin: 0 auto;
     position: relative;
 }
 
 /* Botões da Seta Lateral */
 .seta-btn.seta-lateral {
-    margin-top: 75px; /* Trava as setas na altura entre a 1ª e a 2ª linha */
+    margin-top: 120px; /* Trava as setas na altura entre a 1ª e a 2ª linha */
     background-color: transparent;
     border: 2px solid #FAA926;
     color: #FAA926;
@@ -93,6 +94,11 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+}
+
+.seta-btn.seta-lateral i {
+    font-size: 1em; /* garante que o ícone acompanhe o tamanho do botão */
+    line-height: 1;
 }
 
 .seta-btn.seta-lateral:hover {
@@ -113,7 +119,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
     width: 100%;
-    max-width: 750px; /* Alinha o bloco central */
+    max-width: 1200px; /* Alinha o bloco central */
     margin: 0 auto;
     align-content: start;
     min-height: 280px; /* Mantém a altura fixa mesmo na última página com 3 cards */
