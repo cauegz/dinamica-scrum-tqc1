@@ -15,11 +15,15 @@
 }
 
 html {
+    width: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
+    width: 100%;
     margin: 0;
+    overflow-x: hidden;
     font-family: "Fira Code", monospace;
     background: var(--azul-escuro);
     color: var(--branco);
@@ -30,12 +34,14 @@ img {
     display: block;
 }
 
+/* SEÇÃO DE ABERTURA */
+
 .abertura-pagina {
     position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 64px 8vw;
+    padding: 64px 4vw 64px 8vw;
     background-color: var(--azul-escuro);
 }
 
@@ -54,23 +60,28 @@ img {
 .abertura-pagina__content {
     position: relative;
     z-index: 1;
-    width: min(1200px, 100%);
+    width: min(1440px, 100%);
     margin: 0 auto;
+
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 0.8fr 1.2fr;
     align-items: center;
-    gap: clamp(10rem, 6vw, 7rem);
+
+    gap: clamp(2rem, 4vw, 5rem);
 }
 
 .abertura-pagina__text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    min-width: 0;
 }
 
 .abertura-pagina__eyebrow {
     margin: 0 0 0.75rem;
+
     color: var(--amarelo);
+
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2rem;
@@ -79,11 +90,13 @@ img {
 
 .abertura-pagina__title {
     margin: 0;
+
     font-family: "Lovelo", "Arial Black", sans-serif;
     font-size: clamp(3rem, 7vw, 6rem);
     line-height: 0.98;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+
     color: var(--branco);
 }
 
@@ -91,120 +104,272 @@ img {
     width: min(760px, 100%);
     max-width: 100%;
     min-width: 0;
+
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
+
     border-left: 4px solid var(--amarelo);
+
     background: rgba(247, 248, 250, 0.06);
+
     border-radius: 0 18px 18px 0;
+
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
 }
 
 .abertura-pagina__tagline-text {
     display: block;
+
     width: 100%;
     min-height: 2.6em;
+
     white-space: nowrap;
     overflow: hidden;
+
     margin: 0;
+
     font-size: clamp(1rem, 1.8vw, 1.4rem);
     line-height: 1.7;
+
     color: var(--cinza);
 }
 
 .abertura-pagina__tagline-text::after {
     content: "";
+
     display: inline-block;
+
     width: 2px;
     height: 1.1em;
+
     margin-left: 0.2rem;
+
     vertical-align: middle;
+
     background: var(--amarelo);
+
     animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
 }
 
 .abertura-pagina__button {
     margin-top: 2rem;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     padding: 1rem 1.6rem;
+
     border-radius: 999px;
+
     background: var(--amarelo);
     color: var(--azul-escuro);
+
     text-decoration: none;
+
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
+
     box-shadow: 0 18px 35px rgba(250, 169, 38, 0.28);
 }
 
 .abertura-pagina__button:hover {
     transform: translateY(-2px);
+
     box-shadow: 0 22px 40px rgba(250, 169, 38, 0.32);
 }
 
+/* FOTO */
+
 .abertura-pagina__visual {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    min-width: 0;
 }
 
 .abertura-pagina__photo-wrap {
     position: relative;
-    width: 850px;
+
+    width: 100%;
+    max-width: 1050px;
+
     padding: 1rem;
+
     border-radius: 28px;
+
     background: linear-gradient(
         145deg,
         rgba(247, 248, 250, 0.12),
         rgba(16, 137, 227, 0.18)
     );
+
     box-shadow: 0 28px 60px var(--sombra);
 }
 
-
 .abertura-pagina__photo {
     width: 100%;
-    min-height: 520px;
+    height: auto;
+
+    display: block;
+
     object-fit: cover;
+
     border-radius: 20px;
+
     border: 4px solid rgba(247, 248, 250, 0.2);
+
     box-shadow: 0 25px 40px rgba(1, 46, 115, 0.22);
 }
 
+/* TABLET */
+
 @media (max-width: 820px) {
     .abertura-pagina {
-        padding: 48px 6vw;
+        min-height: auto;
+        padding: 32px 5vw;
     }
 
     .abertura-pagina__content {
+        width: 100%;
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .abertura-pagina__text {
+        width: 100%;
         align-items: center;
         text-align: center;
     }
 
-    .abertura-pagina__tagline {
-        width: 100%;
-        border-left: none;
-        border-top: 4px solid var(--amarelo);
-        border-radius: 0 0 18px 18px;
-    }
-
     .abertura-pagina__visual {
         order: -1;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .abertura-pagina__photo-wrap {
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
     }
 
     .abertura-pagina__photo {
-        min-height: 360px;
+        width: 100%;
+        height: auto;
+    }
+
+    .abertura-pagina__tagline {
+        width: 100%;
+
+        border-left: 4px solid var(--amarelo);
+        border-top: none;
+
+        border-radius: 0 18px 18px 0;
+    }
+
+    .abertura-pagina__tagline-text {
+        width: 100%;
+        white-space: normal;
+        overflow: visible;
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 480px) {
+    .abertura-pagina {
+        padding: 24px 20px;
+    }
+
+    .abertura-pagina__content {
+        gap: 1.75rem;
+    }
+
+    .abertura-pagina__eyebrow {
+        font-size: 0.85rem;
+        letter-spacing: 0.12rem;
+    }
+
+    .abertura-pagina__title {
+        font-size: clamp(2.8rem, 15vw, 4rem);
+        letter-spacing: 0.05em;
+    }
+
+    .abertura-pagina__tagline {
+        width: 100%;
+        margin-top: 1.25rem;
+        padding: 1rem;
+
+        border-left: 4px solid var(--amarelo);
+        border-top: none;
+
+        border-radius: 0 18px 18px 0;
+    }
+
+    .abertura-pagina__tagline-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .abertura-pagina__button {
+        width: 100%;
+        max-width: 360px;
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .abertura-pagina__photo-wrap {
+        width: 100%;
+        padding: 0.7rem;
+        border-radius: 20px;
+    }
+
+    .abertura-pagina__photo {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+}
+
+/* CABEÇALHO RESPONSIVO */
+
+@media (max-width: 700px) {
+    .site-header {
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .site-header nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.25rem;
+    }
+
+    .site-header nav a {
+        font-size: 1rem;
     }
 }
