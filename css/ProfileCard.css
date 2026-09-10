@@ -155,3 +155,21 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+@media (max-width: 768px) {
+  .team-content-wrapper {
+    /* Muda a orientação para empilhar um card abaixo do outro */
+    flex-direction: column;
+    align-items: center;
+    
+    /* Altera o scroll para a vertical caso o conteúdo ultrapasse a altura do contêiner */
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh; /* Ajuste a altura limite da barra de rolagem se necessário */
+  }
+
+  .profile-card {
+    /* Torna a largura adaptável sem modificar a propriedade 'width' original */
+    width: 100%;
+    max-width: 320px; /* Garante que o card não fique exageradamente largo */
+  }
+}
